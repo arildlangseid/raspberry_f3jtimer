@@ -1,0 +1,77 @@
+This howto might be incomplete - please give me feedback on changes needed :-)
+
+Raspberry PI
+
+raspi-config
+3 enable boot to desktop - NO
+4 Internationalization Options - Keyboard Layout L3-Norwegian
+8 Advanced Option A4 - SSH 
+
+
+
+
+sudo apt-get update
+sudo apt-get install mplayer
+
+sudo apt-get install vim
+
+sudo apt-get install alsa-utils
+sudo apt-get install mpg321
+sudo apt-get install lame
+
+
+sudo apt-get upgrade
+Run 'dpkg-reconfigure tzdata' if you wish to change it.
+
+
+Memory split is now set in /boot/config.txt.
+You may want to use raspi-config to set it
+
+
+sudo apt-get install python-dev python-pip
+sudo pip install wiringpi2
+
+
+configure mplayer - to not use lirc
+sudo vi /etc/mplayer/mplayer.conf
+nolirc=yes
+
+
+
+
+http://raspberrywebserver.com/serveradmin/run-a-script-on-start-up.html
+edit /etc/init.d/f3jtimer
+sudo vi /etc/init.d/f3jtimer
+#!/bin/bash
+# /etc/init.d/f3jtimer
+
+### BEGIN INIT INFO
+# Provides:          f3jtimer
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Example initscript
+# Description:       This service is used to run the F3J-Timer
+### END INIT INFO
+
+
+case "$1" in
+    start)
+        echo "Starting f3jtimer"
+        /home/pi/f3jtimer/f3j.py shutdownonhalt &
+        ;;
+    stop)
+        echo "Stopping f3jtimer"
+        killall python
+        ;;
+    *)
+        echo "Usage: /etc/init.d/servod start|stop"
+        exit 1
+        ;;
+esac
+
+exit 0
+
+sudo chmod a+x f3jtimer
+sudo update-rc.d f3jtimer defaults
