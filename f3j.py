@@ -192,7 +192,7 @@ def f3j_innledende():
     lcd.print_lcd(lcd.LCD_LINE_1, "Cirrus F3X Timer")
     lcd.print_lcd(lcd.LCD_LINE_2, "Preliminary 5+10min")
     lcd.print_lcd(lcd.LCD_LINE_3, "Start")
-    my_timer(5, "P", "00:05.5", "01_five_min_preparation_time.ogg", "-1", "")
+    my_timer(5, "P", "00:03.5", "01_five_min_preparation_time.ogg", "-1", "")
 
     if return_to_menu:
         return
@@ -200,24 +200,24 @@ def f3j_innledende():
     done = False
     while not done:
         lcd.print_lcd(lcd.LCD_LINE_3, "Preparation Time")
-        my_timer(5 * 60 + 00, "PR", "00:36.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:12.4",
+        my_timer(5 * 60 + 00, "PR", "00:34.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:10.4",
                  "03_10min_workingtime_will_start_at_the_loooong_tone.ogg")
 
         if return_to_menu:
             lcd.print_lcd(lcd.LCD_LINE_3, "PreparationTime Skip")
-            my_timer(0 * 60 + 40, "PR", "00:36.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:12.4",
+            my_timer(0 * 60 + 40, "PR", "00:34.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:10.4",
                      "03_10min_workingtime_will_start_at_the_loooong_tone.ogg")
 
         if not return_to_menu:
             lcd.print_lcd(lcd.LCD_LINE_3, "Working Time")
-            my_timer(10 * 60 + 00, "WT", "02:05.2", "04_eight_minutes.ogg", "00:13.1", "05_workingtime_countdown.ogg")
+            my_timer(10 * 60 + 00, "WT", "02:03.2", "04_eight_minutes.ogg", "00:11.1", "05_workingtime_countdown.ogg")
 
         if return_to_menu:
             break
 
         if not return_to_menu:
             lcd.print_lcd(lcd.LCD_LINE_3, "Pause")
-            my_timer(30, "P", "00:05.5", "01_five_min_preparation_time.ogg", "-1", "")
+            my_timer(30, "P", "00:03.5", "01_five_min_preparation_time.ogg", "-1", "")
 
         if return_to_menu:
             break
@@ -233,7 +233,7 @@ def f3j_finale():
     lcd.print_lcd(lcd.LCD_LINE_1, "Cirrus F3X Timer")
     lcd.print_lcd(lcd.LCD_LINE_2, "Final 5+15min")
     lcd.print_lcd(lcd.LCD_LINE_3, "Start")
-    my_timer(5, "P", "00:05.5", "01_five_min_preparation_time.ogg", "-1", "")
+    my_timer(5, "P", "00:03.5", "01_five_min_preparation_time.ogg", "-1", "")
 
     if return_to_menu:
         return
@@ -241,17 +241,17 @@ def f3j_finale():
     done = False
     while not done:
         lcd.print_lcd(lcd.LCD_LINE_3, "Preparation Time")
-        my_timer(5 * 60 + 00, "PR", "00:36.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:13.4",
+        my_timer(5 * 60 + 00, "PR", "00:34.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:11.4",
                  "06_15min_workingtime_will_start_at_the_loooong_tone.ogg")
 
         if return_to_menu:
             lcd.print_lcd(lcd.LCD_LINE_3, "PreparationTime Skip")
-            my_timer(0 * 60 + 40, "PR", "00:36.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:13.4",
+            my_timer(0 * 60 + 40, "PR", "00:34.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:11.4",
                      "06_15min_workingtime_will_start_at_the_loooong_tone.ogg")
 
         if not return_to_menu:
             lcd.print_lcd(lcd.LCD_LINE_3, "Working Time")
-            my_timer(15 * 60 + 00, "WT", "02:06.0", "07_thirteen_minutes.ogg", "00:13.1",
+            my_timer(15 * 60 + 00, "WT", "02:04.0", "07_thirteen_minutes.ogg", "00:11.1",
                      "05_workingtime_countdown.ogg")
 
         if return_to_menu:
@@ -259,7 +259,7 @@ def f3j_finale():
 
         if not return_to_menu:
             lcd.print_lcd(lcd.LCD_LINE_3, "Pause")
-            my_timer(30, "P", "00:05.5", "01_five_min_preparation_time.ogg", "-1", "")
+            my_timer(30, "P", "00:03.5", "01_five_min_preparation_time.ogg", "-1", "")
 
         if return_to_menu:
             break
@@ -275,7 +275,7 @@ def f3k_all_up_last_down():
     lcd.print_lcd(lcd.LCD_LINE_1, "Cirrus F3X Timer")
     lcd.print_lcd(lcd.LCD_LINE_2, "F3K All Up Last Down")
     lcd.print_lcd(lcd.LCD_LINE_3, "Start")
-    my_timer(5, "P", "00:05.5", "01_five_min_preparation_time.ogg", "-1", "")
+    my_timer(5, "P", "00:03.5", "01_five_min_preparation_time.ogg", "-1", "")
 
     if return_to_menu:
         return
@@ -295,17 +295,17 @@ def f3k_all_up_last_down():
     while not done and not return_to_menu:
 
         lcd.print_lcd(lcd.LCD_LINE_3, "Preparation Time")
-        my_timer(5 * 60 + 00, "PR", "00:36.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:12.0",
+        my_timer(5 * 60 + 00, "PR", "00:34.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:10.0",
                  "10_workingtime_will_start_at_the_loooong_tone.ogg")
 
         if return_to_menu:
             lcd.print_lcd(lcd.LCD_LINE_3, "PreparationTime Skip")
-            my_timer(0 * 60 + 40, "PR", "00:36.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:12.0",
+            my_timer(0 * 60 + 40, "PR", "00:34.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:10.0",
                      "10_workingtime_will_start_at_the_loooong_tone.ogg")
 
         while counter > 0 and return_to_menu:
             lcd.print_lcd(lcd.LCD_LINE_3, "Working Time " + str(counter) + " left")
-            my_timer(3 * 60 + 03, "WT", "03:03.0", "09_ring.ogg", "00:13.1", "05_workingtime_countdown.ogg")
+            my_timer(3 * 60 + 03, "WT", "03:01.0", "09_ring.ogg", "00:11.1", "05_workingtime_countdown.ogg")
 
             if return_to_menu:
                 break
@@ -316,21 +316,21 @@ def f3k_all_up_last_down():
 
             if not return_to_menu:
                 lcd.print_lcd(lcd.LCD_LINE_3, "Pause")
-                my_timer(30, "P", "00:04.5", "11_preparation_time.ogg", "-1", "")
+                my_timer(30, "P", "00:02.5", "11_preparation_time.ogg", "-1", "")
 
             if return_to_menu:
                 break
 
             if not return_to_menu:
                 lcd.print_lcd(lcd.LCD_LINE_3, "Preparation Time")
-                my_timer(0 * 60 + 30, "PR", "00:12.0", "10_workingtime_will_start_at_the_loooong_tone.ogg", "-1", "")
+                my_timer(0 * 60 + 30, "PR", "00:10.0", "10_workingtime_will_start_at_the_loooong_tone.ogg", "-1", "")
 
             if return_to_menu:
                 break
 
         if not return_to_menu:
             lcd.print_lcd(lcd.LCD_LINE_3, "Pause")
-            my_timer(30, "P", "00:05.5", "01_five_min_preparation_time.ogg", "-1", "")
+            my_timer(30, "P", "00:03.5", "01_five_min_preparation_time.ogg", "-1", "")
 
         if return_to_menu:
             break
@@ -349,9 +349,9 @@ def f3j_demo():
     lcd.print_lcd(lcd.LCD_LINE_2, "Demonstration")
     lcd.print_lcd(lcd.LCD_LINE_3, "Start")
 
-    my_timer(0 * 60 + 40, "WT", "00:36.0", "07_thirteen_minutes.ogg", "00:13.1", "05_workingtime_countdown.ogg")
+    my_timer(0 * 60 + 40, "WT", "00:34.0", "07_thirteen_minutes.ogg", "00:11.1", "05_workingtime_countdown.ogg")
 
-    my_timer(5, "P", "00:05.5", "01_five_min_preparation_time.ogg", "-1", "")
+    my_timer(5, "P", "00:03.5", "01_five_min_preparation_time.ogg", "-1", "")
 
     if return_to_menu:
         return
@@ -359,7 +359,7 @@ def f3j_demo():
     done = False
     while not done:
         lcd.print_lcd(lcd.LCD_LINE_3, "Preparation Time")
-        my_timer(0 * 60 + 40, "PR", "00:36.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:13.4",
+        my_timer(0 * 60 + 40, "PR", "00:34.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:11.4",
                  "06_15min_workingtime_will_start_at_the_loooong_tone.ogg")
 
         if return_to_menu:
@@ -367,14 +367,14 @@ def f3j_demo():
 
         if not return_to_menu:
             lcd.print_lcd(lcd.LCD_LINE_3, "Working Time")
-            my_timer(0 * 60 + 40, "WT", "00:36.0", "07_thirteen_minutes.ogg", "00:13.1", "05_workingtime_countdown.ogg")
+            my_timer(0 * 60 + 40, "WT", "00:34.0", "07_thirteen_minutes.ogg", "00:11.1", "05_workingtime_countdown.ogg")
 
         if return_to_menu:
             break
 
         if not return_to_menu:
             lcd.print_lcd(lcd.LCD_LINE_3, "Pause")
-            my_timer(15, "P", "00:05.5", "01_five_min_preparation_time.ogg", "-1", "")
+            my_timer(15, "P", "00:03.5", "01_five_min_preparation_time.ogg", "-1", "")
 
         if return_to_menu:
             break
@@ -526,7 +526,7 @@ if __name__ == '__main__':
 
         # initSounds()
         os.system('sudo /usr/bin/amixer cset numid=3 1')
-        os.system('sudo /home/pi/f3jtimer/vol.sh 85')
+        os.system('sudo /home/pi/f3jtimer/vol.sh 100')
         # set volume
         #    os.system('sudo /usr/bin/amixer cset numid=1 -- 20%')
         #    os.system('sudo /usr/bin/amixer set PCM -- -2200')
