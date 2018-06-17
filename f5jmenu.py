@@ -185,14 +185,14 @@ def my_timer(time_length, timer_name, sound1_time_all, sound1_file, sound2_time_
     return
 
 
-def f3j_innledende():
+def f5j_innledende():
     global return_to_menu
 
     lcd.lcd_init()
-    lcd.print_lcd(lcd.LCD_LINE_1, "Cirrus F3X Timer")
-    lcd.print_lcd(lcd.LCD_LINE_2, "Preliminary 5+10min")
+    lcd.print_lcd(lcd.LCD_LINE_1, "Cirrus F5J Timer")
+    lcd.print_lcd(lcd.LCD_LINE_2, "Preliminary 8+10min")
     lcd.print_lcd(lcd.LCD_LINE_3, "Start")
-    my_timer(5, "P", "00:03.5", "01_five_min_preparation_time.ogg", "-1", "")
+    my_timer(5, "P", "00:03.0", "01a_preperation_time_will_start_at_the_beep.ogg", "-1", "")
 
     if return_to_menu:
         return
@@ -200,7 +200,7 @@ def f3j_innledende():
     done = False
     while not done:
         lcd.print_lcd(lcd.LCD_LINE_3, "Preparation Time")
-        my_timer(5 * 60 + 00, "PR", "00:34.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:10.4",
+        my_timer(8 * 60 + 00, "PR", "00:34.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:10.4",
                  "03_10min_workingtime_will_start_at_the_loooong_tone.ogg")
 
         if return_to_menu:
@@ -217,7 +217,7 @@ def f3j_innledende():
 
         if not return_to_menu:
             lcd.print_lcd(lcd.LCD_LINE_3, "Pause")
-            my_timer(30, "P", "00:03.5", "01_five_min_preparation_time.ogg", "-1", "")
+            my_timer(30, "P", "00:03.0", "01a_preperation_time_will_start_at_the_beep.ogg", "-1", "")
 
         if return_to_menu:
             break
@@ -226,14 +226,14 @@ def f3j_innledende():
     return
 
 
-def f3j_finale():
+def f5j_finale():
     global return_to_menu
 
     lcd.lcd_init()
-    lcd.print_lcd(lcd.LCD_LINE_1, "Cirrus F3X Timer")
-    lcd.print_lcd(lcd.LCD_LINE_2, "Final 5+15min")
+    lcd.print_lcd(lcd.LCD_LINE_1, "Cirrus F5J Timer")
+    lcd.print_lcd(lcd.LCD_LINE_2, "Final 8+15min")
     lcd.print_lcd(lcd.LCD_LINE_3, "Start")
-    my_timer(5, "P", "00:03.5", "01_five_min_preparation_time.ogg", "-1", "")
+    my_timer(5, "P", "00:03.0", "01a_preperation_time_will_start_at_the_beep.ogg", "-1", "")
 
     if return_to_menu:
         return
@@ -241,7 +241,7 @@ def f3j_finale():
     done = False
     while not done:
         lcd.print_lcd(lcd.LCD_LINE_3, "Preparation Time")
-        my_timer(5 * 60 + 00, "PR", "00:34.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:11.4",
+        my_timer(8 * 60 + 00, "PR", "00:34.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:11.4",
                  "06_15min_workingtime_will_start_at_the_loooong_tone.ogg")
 
         if return_to_menu:
@@ -259,7 +259,7 @@ def f3j_finale():
 
         if not return_to_menu:
             lcd.print_lcd(lcd.LCD_LINE_3, "Pause")
-            my_timer(30, "P", "00:03.5", "01_five_min_preparation_time.ogg", "-1", "")
+            my_timer(30, "P", "00:03.0", "01a_preperation_time_will_start_at_the_beep.ogg", "-1", "")
 
         if return_to_menu:
             break
@@ -268,74 +268,42 @@ def f3j_finale():
     return
 
 
-def f3k_all_up_last_down():
+def f5j_training():
     global return_to_menu
 
     lcd.lcd_init()
-    lcd.print_lcd(lcd.LCD_LINE_1, "Cirrus F3X Timer")
-    lcd.print_lcd(lcd.LCD_LINE_2, "F3K All Up Last Down")
+    lcd.print_lcd(lcd.LCD_LINE_1, "Cirrus F5J Timer")
+    lcd.print_lcd(lcd.LCD_LINE_2, "Training 1+2min30")
     lcd.print_lcd(lcd.LCD_LINE_3, "Start")
-    my_timer(5, "P", "00:03.5", "01_five_min_preparation_time.ogg", "-1", "")
+    my_timer(5, "P", "00:03.0", "01a_preperation_time_will_start_at_the_beep.ogg", "-1", "")
 
     if return_to_menu:
         return
 
-    # Test 3 second launch window
-    #  lcd.print_lcd(lcd.LCD_LINE_3, "Preparation Time")
-    #  my_timer(0*60+15,"PR","-1","", "00:12.0","10_workingtime_will_start_at_the_loooong_tone.ogg")
-    #  if returnToMenu:
-    #    return
-    #  lcd.print_lcd(lcd.LCD_LINE_3, "Working Time 3 left")
-    #  my_timer(3*60+00,"WT","03:00.0","09_ring.ogg","00:13.1","05_workingtime_countdown.ogg")
-    #  if returnToMenu:
-    #    return
-
     done = False
-    counter = 3
-    while not done and not return_to_menu:
-
+    while not done:
         lcd.print_lcd(lcd.LCD_LINE_3, "Preparation Time")
-        my_timer(5 * 60 + 00, "PR", "00:34.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:10.0",
-                 "10_workingtime_will_start_at_the_loooong_tone.ogg")
+        my_timer(1 * 60 + 00, "PR", "00:34.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:10.4",
+                 "03_10min_workingtime_will_start_at_the_loooong_tone.ogg")
 
         if return_to_menu:
             lcd.print_lcd(lcd.LCD_LINE_3, "PreparationTime Skip")
-            my_timer(0 * 60 + 40, "PR", "00:34.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:10.0",
-                     "10_workingtime_will_start_at_the_loooong_tone.ogg")
-
-        while counter > 0 and return_to_menu:
-            lcd.print_lcd(lcd.LCD_LINE_3, "Working Time " + str(counter) + " left")
-            my_timer(3 * 60 + 03, "WT", "03:01.0", "09_ring.ogg", "00:11.1", "05_workingtime_countdown.ogg")
-
-            if return_to_menu:
-                break
-
-            counter -= 1
-            if counter == 0:
-                break
-
-            if not return_to_menu:
-                lcd.print_lcd(lcd.LCD_LINE_3, "Pause")
-                my_timer(30, "P", "00:02.5", "11_preparation_time.ogg", "-1", "")
-
-            if return_to_menu:
-                break
-
-            if not return_to_menu:
-                lcd.print_lcd(lcd.LCD_LINE_3, "Preparation Time")
-                my_timer(0 * 60 + 30, "PR", "00:10.0", "10_workingtime_will_start_at_the_loooong_tone.ogg", "-1", "")
-
-            if return_to_menu:
-                break
+            my_timer(0 * 60 + 40, "PR", "00:34.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:10.4",
+                     "03_10min_workingtime_will_start_at_the_loooong_tone.ogg")
 
         if not return_to_menu:
-            lcd.print_lcd(lcd.LCD_LINE_3, "Pause")
-            my_timer(30, "P", "00:03.5", "01_five_min_preparation_time.ogg", "-1", "")
+            lcd.print_lcd(lcd.LCD_LINE_3, "Working Time")
+            my_timer(2 * 60 + 30, "WT", "02:03.2", "04a_two_minutes_left_of_working_time.ogg", "00:11.1", "05_workingtime_countdown.ogg")
 
         if return_to_menu:
             break
 
-        counter = 3
+        if not return_to_menu:
+            lcd.print_lcd(lcd.LCD_LINE_3, "Pause")
+            my_timer(30, "P", "00:03.0", "01a_preperation_time_will_start_at_the_beep.ogg", "-1", "")
+
+        if return_to_menu:
+            break
 
     return_to_menu = False
     return
@@ -345,7 +313,7 @@ def f3j_demo():
     global return_to_menu
 
     lcd.lcd_init()
-    lcd.print_lcd(lcd.LCD_LINE_1, "Cirrus F3X Timer")
+    lcd.print_lcd(lcd.LCD_LINE_1, "Cirrus F5J Timer")
     lcd.print_lcd(lcd.LCD_LINE_2, "Demonstration")
     lcd.print_lcd(lcd.LCD_LINE_3, "Start")
 
@@ -404,13 +372,13 @@ def update_menu():
     else:
         lcd.print_lcd(lcd.LCD_LINE_2, "       Finals       ")
     if main_menu_choice == 3:
-        lcd.print_lcd(lcd.LCD_LINE_3, "*** AllUpLastDown **")
+        lcd.print_lcd(lcd.LCD_LINE_3, "***** Training *****")
     else:
-        lcd.print_lcd(lcd.LCD_LINE_3, "    AllUpLastDown   ")
+        lcd.print_lcd(lcd.LCD_LINE_3, "      Training      ")
     if main_menu_choice == 4:
-        lcd.print_lcd(lcd.LCD_LINE_4, "***** Power off ****")
+        lcd.print_lcd(lcd.LCD_LINE_4, "***** Main Menu ****")
     else:
-        lcd.print_lcd(lcd.LCD_LINE_4, "      Power off     ")
+        lcd.print_lcd(lcd.LCD_LINE_4, "      Main Menu     ")
 
 
 def main_menu():
@@ -433,19 +401,19 @@ def main_menu():
 
             if main_menu_choice == 1:
                 led.enable()
-                f3j_innledende()
+                f5j_innledende()
                 led.disable()
                 update_menu()
 
             if main_menu_choice == 2:
                 led.enable()
-                f3j_finale()
+                f5j_finale()
                 led.disable()
                 update_menu()
 
             if main_menu_choice == 3:
                 led.enable()
-                f3k_all_up_last_down()
+                f5j_training()
                 led.disable()
                 update_menu()
 
@@ -454,35 +422,34 @@ def main_menu():
 
                 led.disable()
 
-                if shutdown_on_exit:
-                    lcd.print_lcd(lcd.LCD_LINE_1, "!  SHUTTING DOWN!  !")
-                    lcd.print_lcd(lcd.LCD_LINE_2, "!!!!!!!!!!!!!!!!!!!!")
-                    lcd.print_lcd(lcd.LCD_LINE_3, "Wait 60 sec before  ")
-                    lcd.print_lcd(lcd.LCD_LINE_4, "disconnecting power ")
-                    os.system('sudo /sbin/halt')
-                else:
-                    lcd.print_lcd(lcd.LCD_LINE_1, "Timer Exit....      ")
-                    lcd.print_lcd(lcd.LCD_LINE_2, "                    ")
-                    lcd.print_lcd(lcd.LCD_LINE_3, "                    ")
-                    lcd.print_lcd(lcd.LCD_LINE_4, "                    ")
+                lcd.print_lcd(lcd.LCD_LINE_1, "Going to MainMenu.  ")
+                lcd.print_lcd(lcd.LCD_LINE_2, "                    ")
+                lcd.print_lcd(lcd.LCD_LINE_3, "                    ")
+                lcd.print_lcd(lcd.LCD_LINE_4, "                    ")
 
         button_up_pressed = buttons.switch_up.get_state()
         if button_up_pressed:
             while buttons.switch_up.get_state():
                 pass
+            if main_menu_choice == 1:
+                main_menu_choice = 5
+                print "Up - Bottom"
             if main_menu_choice > 1:
                 main_menu_choice -= 1
                 print "Up"
+            update_menu()
 
         button_down_pressed = buttons.switch_down.get_state()
         if button_down_pressed:
             while buttons.switch_down.get_state():
                 pass
+            if main_menu_choice == 4:
+                main_menu_choice = 0
+                print "Down - Top"
             if main_menu_choice < 4:
                 main_menu_choice += 1
                 print "Down"
-
-        update_menu()
+            update_menu()
 
         time.sleep(0.1)
 

@@ -185,11 +185,11 @@ def my_timer(time_length, timer_name, sound1_time_all, sound1_file, sound2_time_
     return
 
 
-def f3j_innledende():
+def f3k_innledende():
     global return_to_menu
 
     lcd.lcd_init()
-    lcd.print_lcd(lcd.LCD_LINE_1, "Cirrus F3X Timer")
+    lcd.print_lcd(lcd.LCD_LINE_1, "Cirrus F3K Timer")
     lcd.print_lcd(lcd.LCD_LINE_2, "Preliminary 5+10min")
     lcd.print_lcd(lcd.LCD_LINE_3, "Start")
     my_timer(5, "P", "00:03.5", "01_five_min_preparation_time.ogg", "-1", "")
@@ -226,11 +226,11 @@ def f3j_innledende():
     return
 
 
-def f3j_finale():
+def f3k_finale():
     global return_to_menu
 
     lcd.lcd_init()
-    lcd.print_lcd(lcd.LCD_LINE_1, "Cirrus F3X Timer")
+    lcd.print_lcd(lcd.LCD_LINE_1, "Cirrus F3K Timer")
     lcd.print_lcd(lcd.LCD_LINE_2, "Final 5+15min")
     lcd.print_lcd(lcd.LCD_LINE_3, "Start")
     my_timer(5, "P", "00:03.5", "01_five_min_preparation_time.ogg", "-1", "")
@@ -272,7 +272,7 @@ def f3k_all_up_last_down():
     global return_to_menu
 
     lcd.lcd_init()
-    lcd.print_lcd(lcd.LCD_LINE_1, "Cirrus F3X Timer")
+    lcd.print_lcd(lcd.LCD_LINE_1, "Cirrus F3K Timer")
     lcd.print_lcd(lcd.LCD_LINE_2, "F3K All Up Last Down")
     lcd.print_lcd(lcd.LCD_LINE_3, "Start")
     my_timer(5, "P", "00:03.5", "01_five_min_preparation_time.ogg", "-1", "")
@@ -408,9 +408,9 @@ def update_menu():
     else:
         lcd.print_lcd(lcd.LCD_LINE_3, "    AllUpLastDown   ")
     if main_menu_choice == 4:
-        lcd.print_lcd(lcd.LCD_LINE_4, "***** Power off ****")
+        lcd.print_lcd(lcd.LCD_LINE_4, "***** Main Menu ****")
     else:
-        lcd.print_lcd(lcd.LCD_LINE_4, "      Power off     ")
+        lcd.print_lcd(lcd.LCD_LINE_4, "      Main Menu     ")
 
 
 def main_menu():
@@ -433,13 +433,13 @@ def main_menu():
 
             if main_menu_choice == 1:
                 led.enable()
-                f3j_innledende()
+                f3k_innledende()
                 led.disable()
                 update_menu()
 
             if main_menu_choice == 2:
                 led.enable()
-                f3j_finale()
+                f3k_finale()
                 led.disable()
                 update_menu()
 
@@ -454,35 +454,34 @@ def main_menu():
 
                 led.disable()
 
-                if shutdown_on_exit:
-                    lcd.print_lcd(lcd.LCD_LINE_1, "!  SHUTTING DOWN!  !")
-                    lcd.print_lcd(lcd.LCD_LINE_2, "!!!!!!!!!!!!!!!!!!!!")
-                    lcd.print_lcd(lcd.LCD_LINE_3, "Wait 60 sec before  ")
-                    lcd.print_lcd(lcd.LCD_LINE_4, "disconnecting power ")
-                    os.system('sudo /sbin/halt')
-                else:
-                    lcd.print_lcd(lcd.LCD_LINE_1, "Timer Exit....      ")
-                    lcd.print_lcd(lcd.LCD_LINE_2, "                    ")
-                    lcd.print_lcd(lcd.LCD_LINE_3, "                    ")
-                    lcd.print_lcd(lcd.LCD_LINE_4, "                    ")
+                lcd.print_lcd(lcd.LCD_LINE_1, "Going to MainMenu.  ")
+                lcd.print_lcd(lcd.LCD_LINE_2, "                    ")
+                lcd.print_lcd(lcd.LCD_LINE_3, "                    ")
+                lcd.print_lcd(lcd.LCD_LINE_4, "                    ")
 
         button_up_pressed = buttons.switch_up.get_state()
         if button_up_pressed:
             while buttons.switch_up.get_state():
                 pass
+            if main_menu_choice == 1:
+                main_menu_choice = 5
+                print "Up - Bottom"
             if main_menu_choice > 1:
                 main_menu_choice -= 1
                 print "Up"
+            update_menu()
 
         button_down_pressed = buttons.switch_down.get_state()
         if button_down_pressed:
             while buttons.switch_down.get_state():
                 pass
+            if main_menu_choice == 4:
+                main_menu_choice = 0
+                print "Down - Top"
             if main_menu_choice < 4:
                 main_menu_choice += 1
                 print "Down"
-
-        update_menu()
+            update_menu()
 
         time.sleep(0.1)
 

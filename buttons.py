@@ -41,16 +41,16 @@ if __name__ == '__main__':
     init()
 
 
-    continueMe = not switch.get_state()
-    while continueMe:
-        continueMe = not switch.get_state()
-        if lastUpdated:
-            lastUpdated = 0
-            if lastDirection:
-                print "Right"
-            else:
-                print "Left"
-        time.sleep(0.3)
+ #   continueMe = not switch.get_state()
+ #   while continueMe:
+ #       continueMe = not switch.get_state()
+ #       if lastUpdated:
+ #           lastUpdated = 0
+ #           if lastDirection:
+ #               print "Right"
+ #           else:
+ #               print "Left"
+ #       time.sleep(0.3)
 
     exitFlag = 1
 
