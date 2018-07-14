@@ -284,12 +284,12 @@ def f3j_training():
     while not done:
         lcd.print_lcd(lcd.LCD_LINE_3, "Preparation Time")
         my_timer(1 * 60 + 00, "PR", "00:34.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:10.4",
-                 "03_10min_workingtime_will_start_at_the_loooong_tone.ogg")
+                 "03a_workingtime_will_start_at_the_loooong_tone.ogg")
 
         if return_to_menu:
             lcd.print_lcd(lcd.LCD_LINE_3, "PreparationTime Skip")
             my_timer(0 * 60 + 40, "PR", "00:34.2", "02_workingtime_will_start_in_30_seconds.ogg", "00:10.4",
-                     "03_10min_workingtime_will_start_at_the_loooong_tone.ogg")
+                     "03a_workingtime_will_start_at_the_loooong_tone.ogg")
 
         if not return_to_menu:
             lcd.print_lcd(lcd.LCD_LINE_3, "Working Time")
